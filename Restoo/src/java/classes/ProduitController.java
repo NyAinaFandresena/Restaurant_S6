@@ -37,12 +37,12 @@ public class ProduitController {
         Myconnection conn=new Myconnection();
         Connection con=conn.getConnection();
         List lpro=new Produit().find("select * from Produit where idCategorie='"+request.getParameter("categorie")+"'", con);
-              List lcat=new Categorie().find("select * from Categorie where idCategorie='"+request.getParameter("categorie")+"'", con);
-      List lcats=new Categorie().find("select * from Categorie", con);
+        List lcat=new Categorie().find("select * from Categorie where idCategorie='"+request.getParameter("categorie")+"'", con);
+        List lcats=new Categorie().find("select * from Categorie", con);
         retour.put("lpro",lpro);
-            retour.put("lcat",lcat);
- retour.put("lcats",lcats);
-        ModelView md=new ModelView(retour,"Pages/Produit/lister","");
+        retour.put("lcat",lcat);
+        retour.put("lcats",lcats);
+        ModelView md=new ModelView(retour,"Pages/template","liste");
         return md;
     }
     
@@ -51,10 +51,10 @@ public class ProduitController {
         HashMap retour = new HashMap();
         Myconnection conn=new Myconnection();
         Connection con=conn.getConnection();
-            List lcats=new Categorie().find("select * from Categorie", con);
-  List lpro=new Produit().find("select * from Produit", con);
+        List lcats=new Categorie().find("select * from Categorie", con);
+        List lpro=new Produit().find("select * from Produit", con);
         retour.put("lpro",lpro);
- retour.put("lcats",lcats);
+        retour.put("lcats",lcats);
         ModelView md=new ModelView(retour,"Pages/Produit/lister","");
         return md;
     }
