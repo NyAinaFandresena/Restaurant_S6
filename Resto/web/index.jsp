@@ -5,4 +5,4 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% response.sendRedirect("http://localhost:8181/Resto/Pages"); %>
+<% response.sendRedirect("http://localhost:8181/Resto/pages/index.jsp"); %>
