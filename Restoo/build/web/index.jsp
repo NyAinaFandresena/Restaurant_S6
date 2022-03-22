@@ -1,0 +1,1 @@
+<%  response.sendRedirect("listercat.do?requestArgumentMethod=true&categorie=1"); %>
